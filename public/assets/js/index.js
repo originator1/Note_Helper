@@ -53,8 +53,8 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
-  if (activeNote) {
-    console.log('ACTIVE NOTE: ' + activeNote.id);
+  if (activeNote.title) {
+    console.log('ACTIVE NOTE: ' + activeNote);
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
@@ -100,12 +100,15 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  
   console.log('NEW LOGGGGGG' +  activeNote.title + 'and  ' + activeNote.text)
   renderActiveNote();
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
+  e.preventDefault();
+  console.log('REEEEEEEEEEEE: ' + e.target);
   activeNote = {};
   renderActiveNote();
 };

@@ -30,41 +30,7 @@ notes.post('/', (req, res) => {
   
 });
 
-// notes.get('/', (req, res) => {
-//   console.info(`${req.method} request received to add a tip`);
-//   console.log(req.body);
 
-//   const { title, text } = req.body;
-
-//   if(req.body) {
-//     const newNote = {
-//       title,
-//       text,
-//     };
-
-//     readAndAppend(newNote, './db/db.json');
-//     res.json(`Note added successfully`);
-//     console.log(newNote);
-//   } else {
-//     res.error('Error in adding note');
-//   }
-  
-// });
-
-//module.exports = function (app) {
-  // app.get("/api/notes", (req, res) => {
-  //   console.log("hey");
-  //   fs.readFile("./db/db.json", (err, data) => {
-  //     if (err) throw err;
-  //     console.log(JSON.parse(data));
-  //     res.send(JSON.parse(data));
-  //   });
-  // });
-  // console.log("Hey");
-
-  //app.post("/api/notes", (req, res) => {});
-  
-//};
 
 module.exports = notes;
 
